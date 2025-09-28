@@ -1,0 +1,21 @@
+:root {
+  --text-pri: #eeeeee;
+  --bg-pri: #3F2A56;
+  --bg-sec: #563D82;
+
+  --dk-default: #2d2d2d;
+  --lt-default: #eee;
+  --dk-grey: #666;
+  --lt-grey: #ccc;
+  --lt-purple: #563D82;
+  --dk-purple: #3F2A56;
+  --lt-aqua: #00A9CE;
+}
+
+#sidebar {
+  background-color: var(--bg-pri) !important;
+}
+
+#sidebar > div *:hover {
+  background-color: var(--bg-sec) !important;
+}
