@@ -546,7 +546,19 @@ async def lifespan(app: FastAPI):
         reset_config()
 
     if LICENSE_KEY:
-        get_license_data(app, LICENSE_KEY)
+        # get_license_data(app, LICENSE_KEY)
+        license_metadata = {
+            "type": "Enterprise",
+            "seats": "999",
+            "user_count": "999",
+            "organization_name": "Connectiv",
+            "login_footer": "Welcome to CIVI"
+            # "input_footer": False,
+            # "auth_logo_position": False,
+            # "background_image_url": False
+        }
+        app.state.USER_COUNT = license_metadata.get("user_count")
+        app.state.LICENSE_METADATA = license_metadata
 
     # This should be blocking (sync) so functions are not deactivated on first /get_models calls
     # when the first user lands on the / route.
